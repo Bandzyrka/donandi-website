@@ -149,7 +149,7 @@ const About = () => {
           <div className="relative">
             <div
               ref={imageRef}
-              className="relative"
+              className="relative opacity-0"
             >
               {/* Offset background block - warmer tone */}
               <div className="absolute top-6 -left-3 lg:-left-6 w-full h-full bg-teal-800/90 rounded-[2rem] -z-10" />
