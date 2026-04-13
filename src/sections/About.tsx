@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Users, Calendar, Target, ArrowRight, Shield, Clock, UserCheck, Building2 } from 'lucide-react';
+import { Users, Calendar, Target, ArrowRight, Shield, Clock, UserCheck, Building2, ShieldCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import aboutPhoto from '../assets/images/about-photo.webp';
@@ -149,7 +149,7 @@ const About = () => {
           <div className="relative">
             <div
               ref={imageRef}
-              className="relative opacity-0"
+              className="relative"
             >
               {/* Offset background block - warmer tone */}
               <div className="absolute top-6 -left-3 lg:-left-6 w-full h-full bg-teal-800/90 rounded-[2rem] -z-10" />
@@ -162,22 +162,15 @@ const About = () => {
                   className="w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] object-cover"
                   loading="lazy"
                 />
-
-                {/* Caption overlay - positioned on solid dark area for readability */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900/80 via-stone-900/40 to-transparent pt-16 pb-6 px-6">
-                  <p className="text-white/90 text-sm font-medium">
-                    Twój spokój to nasza misja
-                  </p>
-                </div>
               </div>
 
-              {/* Year badge - floating top right, responsive sizing */}
+              {/* Trust badge - floating top right, responsive sizing */}
               <div className="absolute -top-2 sm:-top-3 right-4 sm:right-6 lg:right-10 bg-teal-700 text-white rounded-xl sm:rounded-2xl shadow-lg px-3 sm:px-5 py-2.5 sm:py-4">
                 <div className="flex items-center gap-2 sm:gap-3">
-                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-teal-200" strokeWidth={1.5} />
+                  <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-teal-200" strokeWidth={1.5} />
                   <div>
-                    <p className="text-lg sm:text-2xl font-bold tracking-tight">od 2006</p>
-                    <p className="text-[10px] sm:text-xs text-teal-200 uppercase tracking-wide">Lat doświadczenia</p>
+                    <p className="text-lg sm:text-2xl font-bold tracking-tight">0 kar</p>
+                    <p className="text-[10px] sm:text-xs text-teal-200 uppercase tracking-wide">Od US i ZUS</p>
                   </div>
                 </div>
               </div>
