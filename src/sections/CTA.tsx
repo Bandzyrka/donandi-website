@@ -93,15 +93,11 @@ const CTA = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="cta-headline text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Gotowy, by odciążyć swoją firmę lub organizację?
+            Ile godzin w tym miesiącu straciłeś na faktury, deklaracje i ZUS?
           </h2>
 
           <p className="cta-subtext text-lg text-stone-300 mb-10 leading-relaxed">
-            Niezależnie od tego, czy prowadzisz dynamiczny biznes, czy fundację – chętnie
-            podzielimy się naszym 20-letnim doświadczeniem. Umów się na bezpłatną
-            konsultację, podczas której przeanalizujemy Twoje potrzeby i podpowiemy,
-            jak najlepiej zorganizować Twoje finanse. To spotkanie do niczego Cię nie
-            zobowiązuje.
+            Odzyskaj ten czas. My zajmiemy się resztą.
           </p>
 
           <div className="cta-buttons flex flex-col sm:flex-row gap-4 justify-center">
