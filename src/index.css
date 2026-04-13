@@ -1,0 +1,265 @@
+/* Fonts loaded via preload in index.html for non-blocking render */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+    --primary: 168 72% 29%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 6% 96%;
+    --secondary-foreground: 24 10% 10%;
+    --muted: 30 6% 96%;
+    --muted-foreground: 24 6% 45%;
+    --accent: 168 45% 93%;
+    --accent-foreground: 24 10% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 24 6% 91%;
+    --input: 24 6% 91%;
+    --ring: 168 72% 29%;
+    --radius: 0.625rem;
+
+    /* Typography - Font families */
+    --font-display: 'Sora', system-ui, sans-serif;
+    --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+
+    /* Typography - Type scale (1.25 ratio) */
+    --text-xs: 0.75rem;      /* 12px - captions */
+    --text-sm: 0.875rem;     /* 14px - secondary */
+    --text-base: 1rem;       /* 16px - body */
+    --text-lg: 1.125rem;     /* 18px - lead */
+    --text-xl: 1.25rem;      /* 20px - subheading */
+    --text-2xl: 1.5rem;      /* 24px - h4 */
+    --text-3xl: 1.875rem;    /* 30px - h3 */
+    --text-4xl: 2.25rem;     /* 36px - h2 */
+    --text-5xl: 3rem;        /* 48px - h1 */
+
+    /* Custom brand colors - teal primary with warm accents */
+    --brand-primary: 168 72% 29%;
+    --brand-primary-hover: 168 72% 24%;
+    --brand-primary-light: 168 40% 95%;
+    --brand-navy: 24 10% 10%;
+    --brand-light: 168 45% 93%;
+    --brand-gray: 24 6% 45%;
+    --brand-success: 160 72% 39%;
+    --brand-error: 0 84% 60%;
+
+    /* Warm accent palette - honey/amber for "ciepły" */
+    --brand-warm: 35 92% 55%;
+    --brand-warm-light: 38 100% 96%;
+    --brand-warm-muted: 35 60% 70%;
+    --brand-warm-dark: 30 80% 45%;
+
+    /* Warm-tinted neutrals */
+    --warm-white: 40 20% 99%;
+    --warm-gray-50: 35 15% 97%;
+    --warm-gray-100: 32 10% 94%;
+
+    /* Animation easings */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  h1 {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+  }
+
+  h4 {
+    font-size: var(--text-lg);
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-20 sm:py-28 lg:py-36;
+  }
+  
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-teal-700 text-white font-medium rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply bg-teal-800;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary:focus-visible {
+    @apply outline-none ring-2 ring-teal-500 ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-teal-700 font-medium rounded-lg border border-teal-200 transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-teal-50 border-teal-300;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-2 ring-teal-500 ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-transparent text-teal-700 font-medium rounded-lg border-2 border-teal-600 transition-all duration-300;
+  }
+
+  .btn-ghost:hover {
+    @apply bg-teal-50;
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost:focus-visible {
+    @apply outline-none ring-2 ring-teal-500 ring-offset-2;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold text-teal-700 uppercase tracking-widest mb-4 inline-flex items-center gap-2;
+  }
+
+  .section-label::before {
+    content: '';
+    @apply w-2 h-2 rounded-full bg-amber-400;
+  }
+
+  .underline-animation {
+    @apply relative;
+  }
+
+  .underline-animation::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-teal-600 transition-all duration-300;
+    transform: translateX(-50%);
+  }
+  
+  .underline-animation:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Custom scrollbar - using warm-tinted neutrals */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--warm-gray-50));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
