@@ -25,20 +25,17 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Image reveal animation - simple opacity fade
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.3,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
-          },
-        }
-      );
+      // Image reveal animation - set initial state immediately, animate on scroll
+      gsap.set(imageRef.current, { opacity: 0 });
+      gsap.to(imageRef.current, {
+        opacity: 1,
+        duration: 0.3,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 70%',
+        },
+      });
 
       // Content animations
       gsap.fromTo(
