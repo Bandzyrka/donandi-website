@@ -6,7 +6,6 @@ import Navigation from './sections/Navigation';
 import Hero from './sections/Hero';
 import Services from './sections/Services';
 import WhyChooseUs from './sections/WhyChooseUs';
-import Pricing from './sections/Pricing';
 import Testimonials from './sections/Testimonials';
 import About from './sections/About';
 import FAQ from './sections/FAQ';
@@ -48,9 +47,6 @@ function App() {
 
         {/* Why Choose Us Section */}
         <WhyChooseUs />
-
-        {/* Pricing Section */}
-        <Pricing />
 
         {/* Testimonials Section */}
         <Testimonials />
