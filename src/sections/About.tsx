@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { Users, Calendar, Target, ArrowRight, Shield, Clock, UserCheck, Building2, ShieldCheck } from 'lucide-react';
+import { Users, Target, ArrowRight, Shield, Clock, UserCheck, Building2, ShieldCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import aboutPhoto from '../assets/images/about-photo.webp';
 
 const stats = [
   { icon: Users, value: 30, suffix: '+', label: 'Zadowolonych klientów' },
-  { icon: Calendar, value: 20, suffix: '', label: 'Lat doświadczenia w branży' },
+  { icon: Clock, value: 24, suffix: 'h', label: 'Czas odpowiedzi' },
   { icon: Target, value: 100, suffix: '%', label: 'Terminowości rozliczeń' },
 ];
 
@@ -20,23 +20,10 @@ const badges = [
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
   const [counters, setCounters] = useState(stats.map(() => 0));
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Image reveal animation - set initial state immediately, animate on scroll
-      gsap.set(imageRef.current, { opacity: 0 });
-      gsap.to(imageRef.current, {
-        opacity: 1,
-        duration: 0.3,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 70%',
-        },
-      });
-
       // Content animations
       gsap.fromTo(
         '.about-label',
@@ -144,10 +131,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Brand Visual */}
           <div className="relative">
-            <div
-              ref={imageRef}
-              className="relative"
-            >
+            <div className="relative">
               {/* Offset background block - warmer tone */}
               <div className="absolute top-6 -left-3 lg:-left-6 w-full h-full bg-teal-800/90 rounded-[2rem] -z-10" />
 
