@@ -17,7 +17,6 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Usługi', href: '#services' },
     { name: 'Dlaczego My', href: '#why-choose-us' },
-    { name: 'Cennik', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
     { name: 'O nas', href: '#about' },
     { name: 'Kontakt', href: '#contact' },

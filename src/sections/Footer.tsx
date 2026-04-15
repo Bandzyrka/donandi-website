@@ -15,7 +15,6 @@ const footerLinks = {
   company: [
     { name: 'O nas', href: '#about' },
     { name: 'FAQ', href: '#faq' },
-    { name: 'Cennik', href: '#pricing' },
     { name: 'Opinie', href: '#testimonials' },
   ],
   contact: [
