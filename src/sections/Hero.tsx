@@ -105,7 +105,7 @@ const Hero = () => {
               ref={subtextRef}
               className="text-lg text-stone-600 mb-6 leading-relaxed max-w-xl"
             >
-              Zdejmujemy ciężar formalności z barków przedsiębiorców. Rzetelne rozliczenia, pełne wsparcie merytoryczne — Ty zajmujesz się rozwojem, my pilnujemy podatków.
+              Twoje finanse w bezpiecznych rękach. My zajmujemy się liczbami, Ty budujesz swój biznes. Profesjonalna księgowość z misją wsparcia.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
